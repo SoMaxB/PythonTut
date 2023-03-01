@@ -1,29 +1,46 @@
-print("##############################")
-print("###- Calculadora mejorada -###")
-print("##############################")
+print("-> Pizzería PF <-")
 
-operacion = input("Hola, elija una opción:\n1 - Suma\n2 - Resta\n3 - Multiplicación\n4 - División\n5 - Módulo\n6 - Exponente\nTeclee un número y pulse ENTER\n")
+precio = 0
 
+dinero = int(input("Cuanto dinero tiene para comprar pizzas?:\n"))
 
-print(f"Ha elegido la opción {operacion}")
+margarita = 9
+salami = 11
+bacon = 13
 
-primero = int(input("Especifique el primer operador:\n"))
-segundo = int(input("Especifique el segundo operador:\n"))
+elecciones = input("Elige una pizza:\n1) Margarita\n2) Salami\n3) Bácon\n")
 
-match operacion:
-    case "1":
-        print("Ha seleccionado suma")
-        print(f"La suma es {primero + segundo}")
-    case "2":
-        print("Ha seleccionado resta")
-        print(f"La resta es {primero - segundo}")
-    case "3":
-        print(f"La multiplicacion es {primero * segundo}")
-    case "4":
-        print(f"La división es {primero / segundo}")
-    case "5":
-        print(f"El módulo es {primero % segundo}")
-    case "6":
-        print(f"El exponente es {primero ** segundo}")
-    case _:
-        print("Opción incorrecta")
+for eleccion in elecciones:
+    if eleccion == 1:
+        print(f"Tu pizza cuesta: {margarita}")
+    elif eleccion == 2:
+        print(f"Tu pizza cuesta: {salami}")
+    elif eleccion == 3:
+        print(f"Tu pizza cuesta: {bacon}")
+print(eleccion)
+
+respuesta = True
+
+input("Desea añadir algún ingrediente:\n")
+if respuesta == "No":
+    #respuesta = False
+    print(f"El valor de su pedido es: {precio}")
+elif respuesta == "Si":
+    input("Puede elegir entre:\n-Huevo\n-Atún\n-Jamón")
+    if respuesta == "Huevo":
+        precio += 1
+    elif respuesta == "Atún":
+        precio += 2
+    elif respuesta == "Jamón":
+        precio += 1
+
+ingredientes = ["Huevo", "Atún", "Jamón"]
+
+'''for ingrediente in ingredientes:
+    ingredientes += str(1)
+
+precio_final = eleccion + ingrediente'''
+
+cambio = dinero - precio
+
+print(f"El valor de su pedido es: {precio}€, usted ha pagado con {dinero}€, su cambio es: {cambio}€")
