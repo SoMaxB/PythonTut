@@ -1,16 +1,5 @@
 # Importaciones
 from tkinter import *
-import os
-from PIL import ImageTk, ImageColor, Image
-
-# Carga de directorios
-# Directorio principal
-carpeta_principal = os.path.dirname(__file__)
-
-# Directorio imagenes
-carpeta_imagenes = os.path.join(carpeta_principal, "imagenes")
-carpeta_paisajes = os.path.join(carpeta_imagenes, "paisajes")
-
 
 # Creación de ventana
 root = Tk()
@@ -18,13 +7,31 @@ root = Tk()
 # Cambio de título
 root.title("Curso Programación Fácil")
 
-# Icono de la ventana
-root.iconbitmap(os.path.join(carpeta_imagenes, "icono.ico"))
+# Entrada de datos
+entrada = Entry(root,
+                background="springgreen",
+                border=3,
+                foreground="red",
+                width=30
+                ).pack()
 
-# Carga de imagen
-paisaje1 = ImageTk.PhotoImage(Image.open(os.path.join(carpeta_paisajes, "cascada.png")).resize((350,200)))
-etiqueta1 = Label(image=paisaje1)
-etiqueta1.pack()
+# Funcion para el botón
+def enviar():
+    Label(root,
+          text="Se ha pulsado el botón.",
+          background="skyblue",
+          width=26
+          ).pack()
+
+# Botón de enviar
+boton = Button(root,
+               text="Enviar",
+               command=enviar,
+               background="deepskyblue",
+               foreground="gray98",
+               border=3,
+               width=25
+               ).pack()
 
 # Bucle para mantener la ventana abierta
 root.mainloop()
